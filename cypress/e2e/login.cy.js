@@ -9,7 +9,11 @@ describe('template spec', () => {
       .type('Vortex777').should('have.value', 'Vortex777')
 
     cy.get('[data-testid="login-button"]')
-      .click()
+      .click().wait(15000)
+
+    cy.visit('https://portal.vortexcloud.com/#/group')
+    
+
 
   })
 
