@@ -6,7 +6,8 @@ context('Login', () => {
       cy.visit('https://portal.vortexcloud.com/#/login')
       cy.get('#email').type('cidhuang@gmail.com')
       cy.get('#password').type('Vortex777')
-      cy.get('[data-testid="login-button"]').click().wait(15000)
+      cy.get('[data-testid="login-button"]').click()
+      cy.url().should('contain', '/#/group')
     })
   })
   //*
@@ -15,6 +16,7 @@ context('Login', () => {
     cy.get('.top-button-list').children().should('have.length', 6)
   })
   //*/
+  //*
   it('device', () => {
     cy.visit('https://portal.vortexcloud.com/#/device/management')
 
@@ -40,7 +42,7 @@ context('Login', () => {
     })
 
   })
-
+  //*/
 
 
 })
